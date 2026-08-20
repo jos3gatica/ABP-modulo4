@@ -1,8 +1,8 @@
-# Informe breve — TaskFlow
+# Informe breve — Gestión de Tareas
 
 ## Arquitectura
 
-TaskFlow está organizado por responsabilidad. `models` contiene las clases `Tarea` y `GestorTareas`; `services` maneja `localStorage`, Open-Meteo y JSONPlaceholder; `ui` concentra el renderizado y las notificaciones; y `utils` resuelve formato de fechas y conteo regresivo.
+Gestión de tareas está organizado por responsabilidad. `models` contiene las clases `Tarea` y `GestorTareas`; `services` maneja `localStorage`, Open-Meteo y JSONPlaceholder; `ui` concentra el renderizado y las notificaciones; y `utils` resuelve formato de fechas y conteo regresivo.
 
 ## Requerimientos implementados
 
