@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow, aplicación de gestión de tareas en JavaScript.">
+  <title>ABP Módulo 4 | Gestión de tareas</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">ABP módulo 4</p>
+        <h1>Gestión de Tareas</h1>
+        <p class="subtitle">
+          Gestiona tus tareas, fechas límite y planificación contextual.
+        </p>
+      </div>
+
+      <button id="sync-button" class="button button-secondary" type="button">
+        Sincronizar datos demo
+      </button>
+    </header>
+
+    <section class="dashboard" aria-label="Resumen">
+      <article class="metric">
+        <span id="total-count">0</span>
+        <small>Total</small>
+      </article>
+      <article class="metric">
+        <span id="pending-count">0</span>
+        <small>Pendientes</small>
+      </article>
+      <article class="metric">
+        <span id="completed-count">0</span>
+        <small>Completadas</small>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel task-panel" aria-labelledby="task-form-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Nueva tarea</p>
+            <h2 id="task-form-title">Planifica algo importante</h2>
+          </div>
+          <button id="cancel-edit-button" class="text-button hidden" type="button">
+            Cancelar edición
+          </button>
+        </div>
+
+        <form id="task-form" novalidate>
+          <input id="task-id" type="hidden">
+
+          <label for="description">Descripción</label>
+          <input
+            id="description"
+            type="text"
+            maxlength="140"
+            placeholder="Ej.: Preparar propuesta para cliente"
+            required
+            autocomplete="off"
+          >
+          <small id="character-counter" class="field-help">0 / 140 caracteres</small>
+
+          <div class="form-row">
+            <div>
+              <label for="due-date">Fecha límite</label>
+              <input id="due-date" type="datetime-local">
+            </div>
+            <div>
+              <label for="priority">Prioridad</label>
+              <select id="priority">
+                <option value="baja">Baja</option>
+                <option value="media" selected>Media</option>
+                <option value="alta">Alta</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+          <button id="submit-button" class="button" type="submit">
+            Agregar tarea
+          </button>
+        </form>
+      </section>
+
+      <aside class="panel weather-panel" aria-labelledby="weather-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Planificación contextual</p>
+            <h2 id="weather-title">Clima en Valdivia</h2>
+          </div>
+          <button
+            id="weather-refresh-button"
+            class="icon-button"
+            type="button"
+            aria-label="Actualizar clima"
+          >
+            ↻
+          </button>
+        </div>
+
+        <div id="weather-content" class="weather-content" aria-live="polite">
+          <p class="muted">Cargando condiciones meteorológicas…</p>
+        </div>
+        <p class="weather-note">
+          El pronóstico ayuda a anticipar tareas externas con fecha límite.
+        </p>
+      </aside>
+    </section>
+
+    <section class="panel" aria-labelledby="task-list-title">
+      <div class="panel-heading list-heading">
+        <div>
+          <p class="eyebrow">Tus tareas</p>
+          <h2 id="task-list-title">Lista de trabajo</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar tareas">
+          <button class="filter-button is-active" type="button" data-filter="todas">
+            Todas
+          </button>
+          <button class="filter-button" type="button" data-filter="pendientes">
+            Pendientes
+          </button>
+          <button class="filter-button" type="button" data-filter="completadas">
+            Completadas
+          </button>
+        </div>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <div id="empty-state" class="empty-state hidden">
+        <p>No hay tareas en esta vista.</p>
+        <small>Agrega una para comenzar.</small>
+      </div>
+    </section>
+  </main>
+
+  <div id="notification-container" class="notification-container" aria-live="assertive"></div>
+
+  <template id="task-template">
+    <li class="task-item">
+      <button
+        class="task-check"
+        type="button"
+        data-action="toggle"
+        aria-label="Cambiar estado"
+      ></button>
+      <div class="task-main">
+        <div class="task-line">
+          <p class="task-description"></p>
+          <span class="priority-badge"></span>
+        </div>
+        <div class="task-meta"></div>
+      </div>
+      <div class="task-actions">
+        <button class="text-button" type="button" data-action="edit">
+          Editar
+        </button>
+        <button class="text-button danger" type="button" data-action="delete">
+          Eliminar
+        </button>
+      </div>
+    </li>
+  </template>
+
+  <script src="assets/js/models/Tarea.js"></script>
+  <script src="assets/js/models/GestorTareas.js"></script>
+  <script src="assets/js/services/storageService.js"></script>
+  <script src="assets/js/services/weatherService.js"></script>
+  <script src="assets/js/services/apiService.js"></script>
+  <script src="assets/js/utils/dateUtils.js"></script>
+  <script src="assets/js/ui/notifications.js"></script>
+  <script src="assets/js/ui/taskRenderer.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

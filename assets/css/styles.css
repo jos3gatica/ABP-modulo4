@@ -1,0 +1,413 @@
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --ink: #182335;
+  --muted: #657084;
+  --line: #e7eaf0;
+  --primary: #4255d4;
+  --success: #16865e;
+  --danger: #c74352;
+  --shadow: 0 14px 35px rgba(35, 48, 82, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: auto;
+  padding: 56px 0 72px;
+}
+
+.hero,
+.dashboard,
+.content-grid,
+.panel-heading,
+.form-row,
+.task-item,
+.task-line,
+.task-actions {
+  display: flex;
+}
+
+.hero {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  letter-spacing: -2px;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.38rem;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.button {
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 18px;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.button-secondary {
+  background: #e9ecff;
+  color: #3445ba;
+}
+
+.dashboard {
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.metric {
+  flex: 1;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.metric span {
+  display: block;
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.metric small,
+.muted {
+  color: var(--muted);
+}
+
+.content-grid {
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.panel {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.task-panel {
+  flex: 1.35;
+}
+
+.weather-panel {
+  flex: 1;
+}
+
+.panel-heading {
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #ccd2df;
+  border-radius: 9px;
+}
+
+.field-help,
+.form-message {
+  display: block;
+  min-height: 20px;
+  margin: 5px 0 15px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.form-message.error {
+  color: var(--danger);
+}
+
+.form-row {
+  gap: 14px;
+  margin-bottom: 15px;
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+.text-button {
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.danger {
+  color: var(--danger);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.weather-content {
+  min-height: 112px;
+}
+
+.weather-temperature {
+  margin: 8px 0;
+  font-size: 3.1rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.weather-details,
+.weather-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.weather-note {
+  margin: 16px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #eff1ff;
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.list-heading {
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-button {
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
+.filter-button.is-active {
+  background: #eef0ff;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  align-items: center;
+  gap: 14px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.task-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.task-line {
+  align-items: center;
+  gap: 8px;
+}
+
+.task-description {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+.task-meta {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.81rem;
+}
+
+.task-check {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #aab3c5;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.task-item.is-completed .task-check {
+  border-color: var(--success);
+  background: var(--success);
+}
+
+.task-item.is-completed .task-description {
+  color: #8992a1;
+  text-decoration: line-through;
+}
+
+.priority-badge {
+  padding: 3px 7px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.priority-badge.alta {
+  background: #ffe7e9;
+  color: #b03041;
+}
+
+.priority-badge.media {
+  background: #fff0d8;
+  color: #9b5a0e;
+}
+
+.priority-badge.baja {
+  background: #e2f7ed;
+  color: #167550;
+}
+
+.task-actions {
+  gap: 8px;
+}
+
+.empty-state {
+  padding: 34px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.notification-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: grid;
+  gap: 8px;
+  width: min(360px, calc(100% - 40px));
+}
+
+.notification {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #1e2b42;
+  color: #ffffff;
+}
+
+.notification.success {
+  background: var(--success);
+}
+
+.notification.error {
+  background: var(--danger);
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding-top: 32px;
+  }
+
+  .hero,
+  .content-grid,
+  .list-heading,
+  .form-row {
+    flex-direction: column;
+  }
+
+  .hero .button-secondary {
+    width: 100%;
+  }
+
+  .dashboard {
+    gap: 8px;
+  }
+
+  .metric {
+    padding: 14px;
+  }
+
+  .task-actions {
+    flex-direction: column;
+  }
+}
