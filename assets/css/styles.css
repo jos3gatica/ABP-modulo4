@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Hack";
+  src:
+    url("../fonts/Hack-Regular.ttf") format("ttf"),
+    url("../fonts/Hack-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hack";
+  src:
+    url("../fonts/Hack-Bold.ttf") format("ttf"),
+    url("../fonts/Hack-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #f6f7fb;
   --surface: #ffffff;
@@ -25,7 +45,7 @@ body {
     ),
     url("../img/fondo.jpg") center / cover fixed;
   color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Hack", "Courier New", monospace;
 }
 
 button,
