@@ -14,7 +14,7 @@ Descomprime el ZIP y abrir `taskflow/index.html` en un navegador.
 - Eventos `submit`, `click`, `keyup` y `mouseover`.
 - Retardo controlado con `setTimeout` y actualización de vencimientos con `setInterval`.
 - Persistencia de tareas con `localStorage`.
-- Clima de Valdivia mediante Open-Meteo.
+- Clima de Valdivia mediante Open-Meteo (para mi caso particular).
 - Lectura y envío demostrativo a JSONPlaceholder con `fetch`, `async/await` y `try/catch`.
 
 ## Organización
@@ -29,6 +29,8 @@ assets/
     ├── ui/
     └── utils/
 docs/informe-tecnico.md
+index.html
+README.md
 ```
 
 ## Observación (para despliegue local)
