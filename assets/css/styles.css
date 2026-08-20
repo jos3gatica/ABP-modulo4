@@ -2,9 +2,9 @@
   --bg: #f6f7fb;
   --surface: #ffffff;
   --ink: #182335;
-  --muted: #657084;
+  --muted: #363c48;
   --line: #e7eaf0;
-  --primary: #4255d4;
+  --primary: #1f38dc;
   --success: #16865e;
   --danger: #c74352;
   --shadow: 0 14px 35px rgba(35, 48, 82, 0.08);
@@ -16,8 +16,14 @@
 
 body {
   min-width: 320px;
+  min-height: 100vh;
   margin: 0;
-  background: var(--bg);
+  background:
+    linear-gradient(
+      rgba(246, 247, 251, 0.678),
+      rgba(246, 247, 251, 0.517)
+    ),
+    url("../img/fondo.jpg") center / cover fixed;
   color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
