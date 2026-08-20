@@ -1,4 +1,4 @@
-# TaskFlow — ABP Módulo 4
+# Gestión de tareas — ABP Módulo 4
 
 Aplicación de gestión de tareas en JavaScript clásico, organizada por responsabilidades y sin dependencias externas de ejecución.
 
